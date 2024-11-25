@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-Time Air Quality Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+    <h1>Real-Time Air Quality Index (AQI) Map</h1>
+  
+  <div id="map"></div>
+  <script>  
+    var  OSM_URL  =  'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';  
+    var  OSM_ATTRIB  =  '&copy;  <a  href="http://openstreetmap.org/copyright">OpenStreetMap</a>  contributors';  
+    var  osmLayer  =  L.tileLayer(OSM_URL,  {  attribution:  OSM_ATTRIB  });  
+
+    var  WAQI_URL  =  "https://tiles.waqi.info/tiles/usepa-aqi/{z}/{x}/{y}.png?token=f317e68967be3f2a066acee1efa6834143cba945";  
+    var  WAQI_ATTR  =  'Air  Quality  Tiles  &copy;  <a  href="http://waqi.info">waqi.info</a>';  
+    var  waqiLayer  =  L.tileLayer(WAQI_URL,  {  attribution:  WAQI_ATTR  });  
+
+    var  map  =  L.map('map').setView([28.63530800,77.22496000], zoom=10);  
+    map.addLayer(osmLayer).addLayer(waqiLayer);  
+ </script>
+</body>
+</html>
+
