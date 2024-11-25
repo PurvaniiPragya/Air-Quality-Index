@@ -1,1 +1,1 @@
-This is a real time AQI map using the sample code in the World Air Quality Index Project website.
+This is a real time AQI map using the sample Leaflet code in the World Air Quality Index Project website.
